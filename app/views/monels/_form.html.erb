@@ -1,0 +1,25 @@
+<%= form_for(@monel) do |f| %>
+  <% if @monel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@monel.errors.count, "error") %> prohibited this monel from being saved:</h2>
+
+      <ul>
+      <% @monel.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
